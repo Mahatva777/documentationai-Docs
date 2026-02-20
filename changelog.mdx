@@ -1,0 +1,131 @@
+---
+title: Changelog
+description: Track the latest updates, new features, and improvements to Agent.ai to stay informed on platform enhancements.
+---
+
+## Overview
+
+Stay current with the newest releases of Agent.ai. This changelog highlights key changes, including new AI agent categories, performance improvements, bug fixes, and previews of upcoming features.
+
+<Callout kind="info">
+Subscribe to our RSS feed or follow `@agentai` on social platforms to get notifications for new releases.
+</Callout>
+
+## Recent Releases
+
+<Update label="2024-10-15" description="v1.3.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added new AI agent categories: Meeting Prep, Follow-up Agents, and Custom Workflow Builders
+- Introduced premium agent badges for verified high-performance agents
+- Enhanced search with tag filtering for the 2364+ agents marketplace
+
+## Improvements
+
+- Improved agent screenshot rendering with better image optimization
+- Faster marketplace loading times by `>30%`
+
+## Bug Fixes
+
+- Fixed agent profile redirect issues after hiring
+- Resolved banner image loading errors on mobile devices
+
+</Update>
+
+<Update label="2024-09-25" description="v1.2.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Premium hiring flow for direct agent deployment
+- AgentAI branding integration for featured profiles
+
+## Bug Fixes
+
+- Corrected meeting summary generation timeouts
+- Fixed follow-up action persistence in user sessions
+
+## Improvements
+
+- UI polish on agent cards with consistent sizing
+
+</Update>
+
+<Update label="2024-08-10" description="v1.1.0" tags={["breaking", "feature"]}>
+
+## Breaking Changes
+
+- Updated API endpoints to use `/v2/` prefix for agent queries
+
+## New Features
+
+- Initial marketplace launch with 2000+ searchable agents
+- Featured agents section with hire buttons
+
+## Improvements
+
+- Added responsive design for all device sizes
+
+</Update>
+
+## Upcoming Features
+
+Preview what's coming next to Agent.ai.
+
+<Columns cols={3}>
+  <Card title="Advanced Analytics" icon="bar-chart-3" href="/docs/analytics">
+    Track agent performance metrics and usage stats in real-time.
+  </Card>
+  <Card title="Custom Agent Builder" icon="code" href="/docs/builder">
+    Build and deploy your own AI agents without coding.
+  </Card>
+  <Card title="Team Collaboration" icon="users" href="/docs/teams">
+    Share agents and workflows across your organization.
+  </Card>
+</Columns>
+
+## Check Your Version
+
+Verify you're running the latest version of the Agent.ai SDK.
+
+<Tabs>
+  <Tab title="JavaScript" icon="code">
+    <CodeGroup tabs="npm,yarn">
+````bash
+npm show agent-ai-sdk version
+````
+````bash
+yarn info agent-ai-sdk version
+````
+    </CodeGroup>
+  </Tab>
+  <Tab title="Python" icon="python">
+````bash
+pip show agent-ai-sdk | grep Version
+````
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+After updating, clear your cache and restart your application to ensure all changes take effect.
+</Callout>
+
+## Stay Updated
+
+<Steps>
+  <Step title="Subscribe" icon="bell">
+    Enable notifications in your account settings.
+  </Step>
+  <Step title="API Polling" icon="refresh-cw">
+    Use the changelog endpoint:
+    
+````javascript
+const response = await fetch('https://api.example.com/v2/changelog?limit=5');
+const updates = await response.json();
+````
+    
+  </Step>
+  <Step title="Contribute" icon="github">
+    Check our GitHub repo for open issues.
+  </Step>
+</Steps>

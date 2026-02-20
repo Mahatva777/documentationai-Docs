@@ -1,0 +1,156 @@
+---
+title: Core Features
+description: Explore the essential capabilities of Agent.ai, from searching and hiring agents to customizing them for your needs.
+---
+
+## Overview
+
+Agent.ai provides a professional marketplace where you build, discover, and deploy AI agents for real-world tasks. Core features include powerful search tools, custom agent creation, premium capabilities for complex workflows, and robust management options.
+
+You start by browsing thousands of agents, filter by specific tags, hire premium ones for advanced automation, and customize them to fit your needs. These tools streamline your workflow from discovery to execution.
+
+<Callout kind="tip">
+Focus on agents tagged with your use case, like `meeting-prep` or `data-analysis`, to find the best match quickly.
+</Callout>
+
+## Key Capabilities
+
+Use these core features to maximize productivity:
+
+<Columns cols={2}>
+  <Card title="Search & Filter" icon="search" href="#search-filter">
+    Find agents by tags, categories, and ratings in seconds.
+  </Card>
+  <Card title="Custom Builds" icon="code" href="#custom-agents">
+    Create tailored AI agents without coding from scratch.
+  </Card>
+  <Card title="Premium Agents" icon="star" href="#premium-agents">
+    Access advanced agents for enterprise tasks.
+  </Card>
+  <Card title="Workflow Management" icon="settings" href="#workflows">
+    Organize outputs, chain agents, and monitor performance.
+  </Card>
+</Columns>
+
+## Search and Filter Agents
+
+Locate the perfect agent effortlessly.
+
+<Tabs>
+  <Tab title="By Tags" icon="tag">
+    Filter agents using tags like `meeting-prep`, `follow-up`, or `analytics`.
+
+    ```javascript
+    // Example API search
+    const agents = await fetch('https://api.example.com/agents?tags=meeting-prep');
+    ```
+  </Tab>
+  <Tab title="By Category" icon="list">
+    Browse categories such as productivity, sales, or development.
+
+    ```javascript
+    const response = await fetch('https://api.example.com/agents?category=productivity');
+    const data = await response.json();
+    console.log(data.agents);
+    ```
+  </Tab>
+  <Tab title="Advanced Filters" icon="filter">
+    Combine ratings, premium status, and usage stats.
+
+    <ParamField query="minRating" param-type="number" required="false">
+      Minimum agent rating (1-5).
+    </ParamField>
+  </Tab>
+</Tabs>
+
+## Build Custom Agents
+
+Create agents tailored to your workflow in minutes.
+
+<Steps>
+  <Step title="Define Task" icon="edit-3">
+    Specify inputs, outputs, and desired behavior.
+  </Step>
+  <Step title="Select Base Model" icon="cpu">
+    Choose from available LLMs.
+  </Step>
+  <Step title="Add Tools" icon="tool">
+    Integrate APIs or custom functions.
+
+````javascript
+// Sample tool integration
+const tools = [
+  {
+    name: "search_docs",
+    description: "Search documentation",
+    parameters: { query: "string" }
+  }
+];
+````
+
+  </Step>
+  <Step title="Test & Deploy" icon="rocket">
+    Run tests and publish your agent.
+  </Step>
+</Steps>
+
+## Premium Agents
+
+Premium agents handle sophisticated tasks like meeting preparation and automated follow-ups.
+
+<Callout kind="success">
+Premium agents include priority support and higher rate limits for production use.
+</Callout>
+
+<Expandable title="Access Premium Features" default-open="true">
+Hire via the marketplace:
+
+```javascript
+const premiumAgent = await fetch('https://api.example.com/agents/pdpzcsiz2xjfcvgn/hire', {
+  headers: { Authorization: `Bearer ${YOUR_TOKEN}` }
+});
+```
+
+Customize prompts for your style.
+</Expandable>
+
+## Manage Workflows and Outputs
+
+Chain agents and monitor results effectively.
+
+<CodeGroup tabs="JavaScript,Python">
+```javascript
+// Chain agents for workflow
+const prepAgent = await hireAgent('meeting-prep');
+const followupAgent = await hireAgent('meeting-follow-up');
+
+const workflow = await chainAgents([prepAgent, followupAgent]);
+const output = await workflow.run({ meetingNotes: '...' });
+```
+```python
+# Chain agents
+prep_agent = hire_agent('meeting-prep')
+followup_agent = hire_agent('meeting-follow-up')
+
+workflow = chain_agents([prep_agent, followup_agent])
+output = workflow.run(meeting_notes='...')
+```
+</CodeGroup>
+
+```mermaid
+graph LR
+    A[Input Data] --> B[Prep Agent]
+    B --> C[Execute Task]
+    C --> D[Follow-up Agent]
+    D --> E[Output]
+```
+
+## Best Practices
+
+- Start with tagged searches to prototype quickly.
+- Test custom agents in sandbox mode before production.
+- Use workflow chaining for multi-step automation.
+
+<Callout kind="info">
+Explore [Quickstart](/quickstart) for hands-on setup.
+</Callout>
